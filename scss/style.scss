@@ -1,7 +1,7 @@
-//<IMPORT>===================================================
+// <IMPORT>===================================================
 @import "variables";
 
-/*<COMMON STYLES>-------------------------------------------*/
+//<COMMON STYLES>
 
 html {
 	scroll-behavior: smooth;
@@ -20,11 +20,8 @@ body {
 	display: none;
 }
 
-a {
-}
-
 .wrapper {
-	max-width: 1440px;
+	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
 }
@@ -38,8 +35,9 @@ a {
 	// 	padding: 0px 16px;
 	// }
 }
-/*</COMMON STYLES>-------------------------------------------*/
-/*<HEADER>---------------------------------------------------*/
+
+//</COMMON STYLES>
+//<HEADER>
 
 .header {
 	display: flex;
@@ -111,4 +109,80 @@ a {
 	}
 }
 
-/*</HEADER>-------------------------------------------*/
+//</HEADER>
+//<MAIN SECTION>
+
+.main-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background: url("../images/bg-ball.png") no-repeat center center,
+		url("../images/bg-snow.png") no-repeat center center, $primary;
+	background-size: cover;
+
+	border-radius: 20px 20px 0px 0px;
+	text-align: center;
+	color: $static-white;
+
+	.main-content {
+		max-width: 430px;
+		width: 100%;
+		padding: 120px 20px;
+
+		.main-subtitle {
+			font-family: "Allura", serif;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 100%;
+			letter-spacing: 0.05em;
+			text-align: center;
+		}
+
+		.main-top-subtitle {
+			margin-bottom: 12px;
+		}
+
+		.main-title {
+			margin-bottom: 12px;
+
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 150%;
+			letter-spacing: 0.18em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.main-link {
+			display: inline-block;
+			padding: 20px 32px;
+			margin-bottom: 12px;
+
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 130%;
+			letter-spacing: 0.05em;
+			text-align: center;
+			text-transform: uppercase;
+
+			border-radius: 20px;
+
+			background-color: $dark;
+			color: $static-white;
+
+			transition: all 0.5s ease 0s;
+			cursor: pointer;
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: $static-white;
+					color: $dark;
+				}
+			}
+		}
+	}
+}
+
+//</MAIN SECTION>
