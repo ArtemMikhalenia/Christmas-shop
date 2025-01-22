@@ -85,6 +85,7 @@ body.lock {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 8px;
   background: url("../images/bg-ball.png") no-repeat center center, url("../images/bg-snow.png") no-repeat center center, rgb(255, 70, 70);
   background-size: cover;
   border-radius: 20px 20px 0px 0px;
@@ -137,4 +138,66 @@ body.lock {
     background-color: rgb(255, 255, 255);
     color: rgb(24, 28, 41);
   }
+}
+
+.about-section {
+  padding: 60px 8px;
+  background: url("../images/bg-snow.png") no-repeat center center, rgb(255, 70, 70);
+  background-size: cover;
+}
+.about-section .about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+.about-section .about-content .about-left-column {
+  flex: 1 1 auto;
+}
+.about-section .about-content .about-left-column .about-left-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 426px;
+  width: 100%;
+  margin-left: 60px;
+}
+.about-section .about-content .about-left-column .about-left-content .about-subtitle {
+  margin-bottom: 20px;
+  font-family: Allura;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: rgb(255, 70, 70);
+}
+.about-section .about-content .about-left-column .about-left-content .about-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.16em;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgb(24, 28, 41);
+}
+.about-section .about-content .about-left-column .about-left-content .about-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+  text-align: left;
+  color: rgb(24, 28, 41);
+}
+.about-section .about-content .about-right-column .about-right-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-section .about-content .about-right-column .about-right-content img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
