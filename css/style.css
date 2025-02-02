@@ -26,6 +26,18 @@ body.lock {
   margin: 0 auto;
 }
 
+.work-tag {
+  color: rgb(67, 97, 255);
+}
+
+.health-tag {
+  color: rgb(6, 164, 79);
+}
+
+.harmony-tag {
+  color: rgb(255, 67, 247);
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -328,4 +340,50 @@ body.lock {
   text-align: center;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
+}
+.best-section .best-content .best-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+.best-section .best-content .best-cards .best-card {
+  max-width: 310px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(236, 243, 248);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .best-section .best-content .best-cards .best-card:hover {
+    transform: scale(1.05);
+  }
+}
+.best-section .best-content .best-cards .best-card .card-image img {
+  max-width: 100%;
+  width: 100%;
+}
+.best-section .best-content .best-cards .best-card .card-text {
+  flex: 1 1 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.best-section .best-content .best-cards .best-card .card-text .card-tag {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.best-section .best-content .best-cards .best-card .card-text .card-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(24, 28, 41);
 }/*# sourceMappingURL=style.css.map */

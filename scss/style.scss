@@ -38,6 +38,18 @@ body {
 	// }
 }
 
+.work-tag {
+	color: $tag-purple;
+}
+
+.health-tag {
+	color: $tag-green;
+}
+
+.harmony-tag {
+	color: $tag-pink;
+}
+
 //</COMMON STYLES>
 //<HEADER>
 
@@ -454,14 +466,66 @@ body {
 	}
 
 	.best-content {
-		// display: flex;
-		// align-items: center;
-		// justify-content: space-between;
+		.best-cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 12px;
 
-		// border-radius: 20px;
+			.best-card {
+				max-width: 310px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
 
-		// background-color: $static-white;
-		// overflow: hidden;
+				border-radius: 20px;
+
+				background-color: $content-background;
+
+				transition: all 0.5s ease 0s;
+				cursor: pointer;
+
+				@media (hover: hover) {
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+
+				.card-image {
+					img {
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				.card-text {
+					flex: 1 1 auto;
+					padding: 20px;
+
+					border-radius: 20px;
+
+					background-color: $static-white;
+
+					.card-tag {
+						margin-bottom: 8px;
+
+						font-size: 12px;
+						font-weight: 600;
+						line-height: 130%;
+						letter-spacing: 0.05em;
+						text-transform: uppercase;
+					}
+
+					.card-name {
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 152%;
+						letter-spacing: 0.08em;
+						text-transform: uppercase;
+
+						color: $dark;
+					}
+				}
+			}
+		}
 	}
 }
 
