@@ -165,7 +165,7 @@ body.lock {
 }
 .about-section .about-content .about-left-column .about-left-content .about-subtitle {
   margin-bottom: 20px;
-  font-family: Allura;
+  font-family: "Allura", serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 100%;
@@ -200,4 +200,104 @@ body.lock {
   width: 100%;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.slider-section {
+  padding: 60px 0px;
+  background: url("../images/bg-snow.png") no-repeat center center, rgb(255, 70, 70);
+  background-size: cover;
+}
+.slider-section .slider-subtitle {
+  margin-bottom: 12px;
+  font-family: "Allura", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.slider-section .slider-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+.slider-section .slider-content .slider-wrapper {
+  max-width: 1276px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 20px;
+  overflow: hidden;
+}
+.slider-section .slider-content .slider-wrapper .slider-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  transition: all 0.5s ease 0s;
+}
+.slider-section .slider-content .slider-wrapper .slider-line .slide .slide-content p {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 98px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+.slider-section .slider-content .slider-wrapper .slider-line .slide .slide-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.slider-section .slider-content .slider-wrapper .slider-line .slide .slide-image img {
+  max-width: 100%;
+  width: 100%;
+}
+.slider-section .slider-content .slider-buttons {
+  max-width: 1276px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+  padding: 0px 8px;
+  gap: 20px;
+}
+.slider-section .slider-content .slider-buttons .slider-left-btn svg {
+  transform: rotate(180deg);
+}
+.slider-section .slider-content .slider-buttons .slider-btn {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+.slider-section .slider-content .slider-buttons .slider-btn svg path {
+  stroke: rgb(255, 255, 255);
+}
+.slider-section .slider-content .slider-buttons .slider-btn:disabled {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+.slider-section .slider-content .slider-buttons .slider-btn:disabled svg path {
+  stroke: rgba(255, 255, 255, 0.4);
+}
+@media (hover: hover) {
+  .slider-section .slider-content .slider-buttons .slider-btn:hover:not(:disabled) {
+    background-color: rgb(255, 255, 255);
+  }
+  .slider-section .slider-content .slider-buttons .slider-btn:hover:not(:disabled) svg path {
+    stroke: rgb(255, 70, 70);
+  }
 }/*# sourceMappingURL=style.css.map */

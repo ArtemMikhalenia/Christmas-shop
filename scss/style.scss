@@ -219,7 +219,7 @@ body {
 				.about-subtitle {
 					margin-bottom: 20px;
 
-					font-family: Allura;
+					font-family: "Allura", serif;
 					font-size: 24px;
 					font-weight: 400;
 					line-height: 100%;
@@ -228,6 +228,7 @@ body {
 
 					color: $primary;
 				}
+
 				.about-title {
 					margin-bottom: 20px;
 
@@ -240,6 +241,7 @@ body {
 
 					color: $dark;
 				}
+
 				.about-text {
 					font-size: 16px;
 					font-weight: 400;
@@ -272,5 +274,146 @@ body {
 
 //</ABOUT SECTION>
 //<SLIDER SECTION>
+
+.slider-section {
+	padding: 60px 0px;
+
+	background: url("../images/bg-snow.png") no-repeat center center, $primary;
+	background-size: cover;
+
+	.slider-subtitle {
+		margin-bottom: 12px;
+
+		font-family: "Allura", serif;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: 0.05em;
+		text-align: center;
+
+		color: $static-white;
+	}
+
+	.slider-title {
+		margin-bottom: 20px;
+
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 152%;
+		letter-spacing: 0.16em;
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $static-white;
+	}
+
+	.slider-content {
+		.slider-wrapper {
+			max-width: 1276px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0 auto 20px;
+
+			overflow: hidden;
+
+			.slider-line {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				// max-width: 480px;
+				width: 100%;
+
+				transition: all 0.5s ease 0s;
+
+				.slide {
+					.slide-content {
+						p {
+							font-size: 80px;
+							font-weight: 600;
+							line-height: 98px;
+							text-align: center;
+							text-transform: uppercase;
+
+							color: $static-white;
+						}
+					}
+
+					.slide-image {
+						width: 200px;
+						height: 200px;
+						border-radius: 20px;
+						overflow: hidden;
+
+						img {
+							max-width: 100%;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		.slider-buttons {
+			max-width: 1276px;
+			width: 100%;
+			display: flex;
+			justify-content: end;
+			margin: 0 auto;
+			padding: 0px 8px;
+			gap: 20px;
+
+			.slider-left-btn {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+
+			.slider-btn {
+				width: 56px;
+				height: 56px;
+
+				border: 1px solid $static-white;
+				border-radius: 20px;
+				background-color: transparent;
+
+				cursor: pointer;
+				transition: all 0.5s ease 0s;
+
+				svg {
+					path {
+						stroke: $static-white;
+					}
+				}
+
+				&:disabled {
+					border: 1px solid $static-white-40;
+
+					svg {
+						path {
+							stroke: $static-white-40;
+						}
+					}
+
+					cursor: not-allowed;
+				}
+
+				@media (hover: hover) {
+					&:hover:not(:disabled) {
+						background-color: $static-white;
+
+						svg {
+							path {
+								stroke: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 //</SLIDER SECTION>
