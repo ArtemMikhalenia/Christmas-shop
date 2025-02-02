@@ -4,6 +4,7 @@ html {
 
 body {
   font-family: "Montserrat", serif;
+  background-color: rgb(255, 255, 255);
 }
 body.lock {
   width: 100%;
@@ -15,7 +16,7 @@ body.lock {
 }
 
 .wrapper {
-  max-width: 100%;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
 }
@@ -228,6 +229,7 @@ body.lock {
   color: rgb(255, 255, 255);
 }
 .slider-section .slider-content .slider-wrapper {
+  padding: 0px 82px;
   max-width: 1276px;
   width: 100%;
   display: flex;
@@ -300,4 +302,30 @@ body.lock {
   .slider-section .slider-content .slider-buttons .slider-btn:hover:not(:disabled) svg path {
     stroke: rgb(255, 70, 70);
   }
+}
+
+.best-section {
+  padding: 60px 8px;
+  background: url("../images/bg-snow.png") no-repeat center center, rgb(255, 70, 70);
+  background-size: cover;
+}
+.best-section .best-subtitle {
+  margin-bottom: 12px;
+  font-family: "Allura", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.best-section .best-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
 }/*# sourceMappingURL=style.css.map */

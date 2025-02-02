@@ -10,6 +10,8 @@ html {
 body {
 	font-family: $font-family;
 
+	background-color: $static-white;
+
 	&.lock {
 		width: 100%;
 		overflow: hidden;
@@ -21,7 +23,7 @@ body {
 }
 
 .wrapper {
-	max-width: 100%;
+	max-width: 1440px;
 	width: 100%;
 	margin: 0 auto;
 }
@@ -309,6 +311,7 @@ body {
 
 	.slider-content {
 		.slider-wrapper {
+			padding: 0px 82px;
 			max-width: 1276px;
 			width: 100%;
 			display: flex;
@@ -323,7 +326,6 @@ body {
 				display: flex;
 				align-items: center;
 				gap: 20px;
-				// max-width: 480px;
 				width: 100%;
 
 				transition: all 0.5s ease 0s;
@@ -417,3 +419,50 @@ body {
 }
 
 //</SLIDER SECTION>
+//<BEST SECTION>
+
+.best-section {
+	padding: 60px 8px;
+
+	background: url("../images/bg-snow.png") no-repeat center center, $primary;
+	background-size: cover;
+
+	.best-subtitle {
+		margin-bottom: 12px;
+
+		font-family: "Allura", serif;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: 0.05em;
+		text-align: center;
+
+		color: $static-white;
+	}
+
+	.best-title {
+		margin-bottom: 20px;
+
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 152%;
+		letter-spacing: 0.16em;
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $static-white;
+	}
+
+	.best-content {
+		// display: flex;
+		// align-items: center;
+		// justify-content: space-between;
+
+		// border-radius: 20px;
+
+		// background-color: $static-white;
+		// overflow: hidden;
+	}
+}
+
+//</BEST SECTION>

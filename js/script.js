@@ -8,9 +8,12 @@ const sliderBtnRight = document.querySelector(".slider-right-btn");
 let counter = 0;
 const numberOfClicks = 4;
 let width;
+let paddingWidth = 164;
 
 function init() {
-	width = (sliderLine.scrollWidth - sliderWrapper.offsetWidth) / numberOfClicks;
+	width =
+		(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
+		numberOfClicks;
 	swipeSlider();
 }
 
