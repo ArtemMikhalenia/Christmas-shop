@@ -530,3 +530,128 @@ body {
 }
 
 //</BEST SECTION>
+//<EXPLORE SECTION>
+
+.explore-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 180px 8px;
+
+	background: url("../images/bg-forest.png") no-repeat center center,
+		url("../images/bg-snow.png") no-repeat center center, $primary;
+	background-size: cover;
+
+	border-radius: 0px 0px 20px 20px;
+	text-align: center;
+	color: $static-white;
+
+	.explore-content {
+		max-width: 426px;
+		width: 100%;
+		margin: 0 auto;
+
+		.explore-title {
+			margin-bottom: 20px;
+
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 152%;
+			letter-spacing: 0.16em;
+			text-align: center;
+			text-transform: uppercase;
+
+			color: $static-white;
+		}
+
+		.explore-link {
+			display: inline-block;
+			padding: 20px 32px;
+			margin-bottom: 20px;
+
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 130%;
+			letter-spacing: 0.05em;
+			text-align: center;
+			text-transform: uppercase;
+
+			border-radius: 20px;
+
+			background-color: $dark;
+			color: $static-white;
+
+			transition: all 0.5s ease 0s;
+			cursor: pointer;
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: $static-white;
+					color: $dark;
+				}
+			}
+		}
+
+		.explore-subtitle {
+			margin-bottom: 8px;
+
+			font-family: Allura;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 100%;
+			letter-spacing: 0.05em;
+			text-align: center;
+
+			color: $static-white;
+		}
+		.explore-timer {
+			max-width: 344px;
+			width: 100%;
+			padding: 8px 0px 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			margin: 0 auto;
+
+			border-radius: 20px;
+
+			background-color: $static-white-40;
+
+			.timer {
+				width: 80px;
+			}
+
+			.time-number {
+				font-size: 24px;
+				font-weight: 600;
+				line-height: 152%;
+				letter-spacing: 0.16em;
+				text-align: center;
+				text-transform: uppercase;
+
+				color: $static-white;
+			}
+
+			.separator {
+				width: 1px;
+				height: 20px;
+				background-color: $static-white-40;
+			}
+
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				line-height: 130%;
+				letter-spacing: 0.05em;
+				text-align: center;
+				text-transform: uppercase;
+
+				color: $static-white;
+			}
+		}
+	}
+}
+
+//</EXPLORE SECTION>
