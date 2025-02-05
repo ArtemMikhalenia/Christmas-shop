@@ -58,7 +58,9 @@ body {
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 12px 0px;
+	max-width: 1276px;
+	margin: 0 auto;
+	padding: 12px 8px;
 
 	.header-logo {
 		padding: 8px 0px;
@@ -658,6 +660,136 @@ body {
 //</EXPLORE SECTION>
 //<FOOTER>
 
+.footer {
+	max-width: 1276px;
+	margin: 0 auto;
+	padding: 60px 8px;
 
+	.footer-contacts {
+		margin-bottom: 60px;
+
+		.contacts-content {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 12px;
+
+			a {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				padding: 20px;
+
+				border-radius: 20px;
+				background-color: $content-background;
+
+				.link-title {
+					font-size: 24px;
+					font-weight: 600;
+					line-height: 152%;
+					letter-spacing: 0.16em;
+					text-align: center;
+					text-transform: uppercase;
+
+					color: $dark;
+
+					transition: all 0.5s ease 0s;
+				}
+
+				.link-subtitle {
+					font-size: 16px;
+					font-weight: 600;
+					line-height: 152%;
+					letter-spacing: 0.08em;
+					text-align: center;
+					text-transform: uppercase;
+
+					color: $dark;
+
+					transition: all 0.5s ease 0s;
+				}
+
+				@media (hover: hover) {
+					&:hover {
+						.link-title,
+						.link-subtitle {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer-social {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+
+		.social-content {
+			max-width: 196px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.social-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				max-width: 40px;
+				width: 100%;
+				min-height: 40px;
+				height: 100%;
+
+				svg {
+					path {
+						transition: all 0.5s ease 0s;
+					}
+				}
+
+				@media (hover: hover) {
+					&:hover {
+						svg {
+							path {
+								stroke: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.copyright {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 148%;
+			letter-spacing: 0%;
+			text-align: center;
+
+			color: $dark;
+		}
+		.caption-link {
+			font-family: Allura;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 100%;
+			letter-spacing: 0.05em;
+			text-align: center;
+
+			color: $dark;
+			transition: all 0.5s ease 0s;
+
+			@media (hover: hover) {
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+}
 
 //</FOOTER>
