@@ -94,6 +94,9 @@ body.lock {
     color: rgb(255, 70, 70);
   }
 }
+.header .header-list li .header-list-link.inactive {
+  pointer-events: none;
+}
 
 .main-section {
   display: flex;
