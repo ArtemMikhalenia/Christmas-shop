@@ -793,3 +793,133 @@ body {
 }
 
 //</FOOTER>
+//<GIFTS SECTION>
+
+.gifts {
+	padding: 60px 8px;
+	border-radius: 20px;
+	background: url("../images/bg-garland.png") no-repeat top center, $primary;
+	background-size: contain;
+
+	.gifts-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+
+		.gifts-title {
+			max-width: 426px;
+			width: 100%;
+
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 150%;
+			letter-spacing: 0.18em;
+			text-align: center;
+			text-transform: uppercase;
+
+			color: $static-white;
+		}
+
+		.tabs-container {
+			max-width: 474px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 8px;
+
+			.tab {
+				padding: 12px 20px;
+
+				font-size: 12px;
+				font-weight: 600;
+				line-height: 130%;
+				letter-spacing: 0.05em;
+				text-align: left;
+				text-transform: uppercase;
+
+				color: $static-white;
+
+				border-radius: 12px;
+
+				transition: all 0.5s ease 0s;
+				cursor: pointer;
+
+				&.active {
+					background-color: $static-white-20;
+				}
+
+				@media (hover: hover) {
+					&:hover {
+						background-color: $static-white-20;
+					}
+				}
+			}
+		}
+
+		.gifts-cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: minmax(320px, 342px);
+			gap: 12px;
+
+			.gifts-card {
+				max-width: 310px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+
+				border-radius: 20px;
+
+				background-color: $content-background;
+
+				transition: all 0.5s ease 0s;
+				cursor: pointer;
+
+				@media (hover: hover) {
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+
+				.gifts-card-image {
+					img {
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				.gifts-card-text {
+					flex: 1 1 auto;
+					padding: 20px;
+
+					border-radius: 20px;
+
+					background-color: $static-white;
+
+					.gifts-card-tag {
+						margin-bottom: 8px;
+
+						font-size: 12px;
+						font-weight: 600;
+						line-height: 130%;
+						letter-spacing: 0.05em;
+						text-transform: uppercase;
+					}
+
+					.gifts-card-name {
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 152%;
+						letter-spacing: 0.08em;
+						text-transform: uppercase;
+
+						color: $dark;
+					}
+				}
+			}
+		}
+	}
+}
+
+//</GIFTS SECTION>

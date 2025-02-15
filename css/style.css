@@ -589,4 +589,104 @@ body.lock {
   .footer .footer-social .caption-link:hover {
     color: rgb(255, 70, 70);
   }
+}
+
+.gifts {
+  padding: 60px 8px;
+  border-radius: 20px;
+  background: url("../images/bg-garland.png") no-repeat top center, rgb(255, 70, 70);
+  background-size: contain;
+}
+.gifts .gifts-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.gifts .gifts-content .gifts-title {
+  max-width: 426px;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+.gifts .gifts-content .tabs-container {
+  max-width: 474px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.gifts .gifts-content .tabs-container .tab {
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+.gifts .gifts-content .tabs-container .tab.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+@media (hover: hover) {
+  .gifts .gifts-content .tabs-container .tab:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+.gifts .gifts-content .gifts-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(320px, 342px);
+  gap: 12px;
+}
+.gifts .gifts-content .gifts-cards .gifts-card {
+  max-width: 310px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(236, 243, 248);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .gifts .gifts-content .gifts-cards .gifts-card:hover {
+    transform: scale(1.05);
+  }
+}
+.gifts .gifts-content .gifts-cards .gifts-card .gifts-card-image img {
+  max-width: 100%;
+  width: 100%;
+}
+.gifts .gifts-content .gifts-cards .gifts-card .gifts-card-text {
+  flex: 1 1 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.gifts .gifts-content .gifts-cards .gifts-card .gifts-card-text .gifts-card-tag {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.gifts .gifts-content .gifts-cards .gifts-card .gifts-card-text .gifts-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(24, 28, 41);
 }/*# sourceMappingURL=style.css.map */

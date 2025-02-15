@@ -11,9 +11,11 @@ let width;
 let paddingWidth = 164;
 
 function init() {
-	width =
-		(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
-		numberOfClicks;
+	if (sliderLine) {
+		width =
+			(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
+			numberOfClicks;
+	}
 	swipeSlider();
 }
 
