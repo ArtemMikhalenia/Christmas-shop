@@ -435,6 +435,19 @@ body {
 				@media (max-width: 768px) {
 					max-width: 256px;
 				}
+
+				@media (max-width: 720px) {
+					margin-left: 20px;
+				}
+
+				@media (max-width: 630px) {
+					max-width: 100%;
+					margin-left: 0px;
+				}
+			}
+
+			@media (max-width: 630px) {
+				padding: 0px 20px;
 			}
 		}
 
@@ -461,6 +474,20 @@ body {
 			@media (max-width: 900px) {
 				max-width: 376px;
 			}
+
+			@media (max-width: 720px) {
+				max-width: 330px;
+			}
+
+			@media (max-width: 630px) {
+				max-width: 100%;
+			}
+		}
+
+		@media (max-width: 630px) {
+			padding-top: 60px;
+			flex-direction: column;
+			gap: 60px;
 		}
 	}
 }
@@ -502,8 +529,7 @@ body {
 
 	.slider-content {
 		.slider-wrapper {
-			padding: 0px 82px;
-			max-width: 1276px;
+			// padding: 0px 82px;
 			width: 100%;
 			display: flex;
 			align-items: center;

@@ -1,3 +1,6 @@
+const aboutSection = document.querySelector(".about-section");
+const aboutContent = document.querySelector(".about-content");
+
 const sliderWrapper = document.querySelector(".slider-wrapper");
 const slides = document.querySelectorAll(".slide");
 const sliderLine = document.querySelector(".slider-line");
@@ -8,14 +11,18 @@ const sliderBtnRight = document.querySelector(".slider-right-btn");
 let counter = 0;
 const numberOfClicks = 4;
 let width;
-let paddingWidth = 164;
 
 function init() {
+	let paddingWidth = aboutSection.offsetWidth - aboutContent.offsetWidth;
+
 	if (sliderLine) {
 		width =
 			(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
 			numberOfClicks;
 	}
+
+	sliderWrapper.style.padding = `0px ${paddingWidth / 2}px`;
+
 	swipeSlider();
 }
 
