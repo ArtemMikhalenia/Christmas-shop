@@ -529,7 +529,6 @@ body {
 
 	.slider-content {
 		.slider-wrapper {
-			// padding: 0px 82px;
 			width: 100%;
 			display: flex;
 			align-items: center;
@@ -673,7 +672,8 @@ body {
 	.best-content {
 		.best-cards {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(1, 1fr);
 			gap: 12px;
 
 			.best-card {
@@ -729,6 +729,32 @@ body {
 						color: $dark;
 					}
 				}
+
+				@media (max-width: 500px) {
+					// max-width: 500px;
+
+					@media (hover: hover) {
+						&:hover {
+							transform: scale(1.02);
+						}
+					}
+				}
+			}
+
+			@media (max-width: 1300px) {
+				grid-template-columns: repeat(2, 310px);
+				grid-template-rows: repeat(2, 1fr);
+				justify-content: space-evenly;
+			}
+
+			@media (max-width: 768px) {
+				justify-content: center;
+			}
+
+			@media (max-width: 660px) {
+				grid-template-columns: repeat(1, 1fr);
+				grid-template-rows: repeat(4, 1fr);
+				justify-items: center;
 			}
 		}
 	}
