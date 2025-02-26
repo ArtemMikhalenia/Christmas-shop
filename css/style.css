@@ -744,6 +744,18 @@ body.lock {
     color: rgb(255, 70, 70);
   }
 }
+@media (max-width: 1200px) {
+  .footer .footer-contacts .contacts-content a {
+    max-width: 752px;
+    width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .footer .footer-contacts .contacts-content {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
 .footer .footer-social {
   display: flex;
   flex-direction: column;

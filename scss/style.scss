@@ -731,8 +731,6 @@ body {
 				}
 
 				@media (max-width: 500px) {
-					// max-width: 500px;
-
 					@media (hover: hover) {
 						&:hover {
 							transform: scale(1.02);
@@ -947,6 +945,16 @@ body {
 						}
 					}
 				}
+
+				@media (max-width: 1200px) {
+					max-width: 752px;
+					width: 100%;
+				}
+			}
+
+			@media (max-width: 1200px) {
+				grid-template-columns: repeat(1, 1fr);
+				justify-items: center;
 			}
 		}
 	}
