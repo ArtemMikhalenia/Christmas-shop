@@ -44,7 +44,7 @@ body.lock {
   justify-content: space-between;
   max-width: 1276px;
   margin: 0 auto;
-  padding: 12px 8px;
+  padding: 12px 0px;
 }
 .header .header-logo {
   position: relative;
@@ -863,6 +863,17 @@ body.lock {
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
+@media (max-width: 500px) {
+  .gifts .gifts-content .tabs-container .tab {
+    padding: 12px 8px;
+  }
+}
+@media (max-width: 500px) {
+  .gifts .gifts-content .tabs-container {
+    max-width: 354px;
+    gap: 0;
+  }
+}
 .gifts .gifts-content .gifts-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -909,4 +920,19 @@ body.lock {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgb(24, 28, 41);
+}
+@media (max-width: 1300px) {
+  .gifts .gifts-content .gifts-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 990px) {
+  .gifts .gifts-content .gifts-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .gifts .gifts-content .gifts-cards {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=style.css.map */

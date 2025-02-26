@@ -60,7 +60,7 @@ body {
 
 	max-width: 1276px;
 	margin: 0 auto;
-	padding: 12px 8px;
+	padding: 12px 0px;
 
 	.header-logo {
 		position: relative;
@@ -1092,6 +1092,15 @@ body {
 						background-color: $static-white-20;
 					}
 				}
+
+				@media (max-width: 500px) {
+					padding: 12px 8px;
+				}
+			}
+
+			@media (max-width: 500px) {
+				max-width: 354px;
+				gap: 0;
 			}
 		}
 
@@ -1154,6 +1163,18 @@ body {
 						color: $dark;
 					}
 				}
+			}
+
+			@media (max-width: 1300px) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+
+			@media (max-width: 990px) {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@media (max-width: 650px) {
+				grid-template-columns: 1fr;
 			}
 		}
 	}

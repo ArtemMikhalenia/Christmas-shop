@@ -13,17 +13,19 @@ const numberOfClicks = 4;
 let width;
 
 function init() {
-	let paddingWidth = aboutSection.offsetWidth - aboutContent.offsetWidth;
+	if (sliderWrapper) {
+		let paddingWidth = aboutSection.offsetWidth - aboutContent.offsetWidth;
 
-	if (sliderLine) {
-		width =
-			(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
-			numberOfClicks;
+		if (sliderLine) {
+			width =
+				(sliderLine.scrollWidth - sliderWrapper.offsetWidth + paddingWidth) /
+				numberOfClicks;
+		}
+
+		sliderWrapper.style.padding = `0px ${paddingWidth / 2}px`;
+
+		swipeSlider();
 	}
-
-	sliderWrapper.style.padding = `0px ${paddingWidth / 2}px`;
-
-	swipeSlider();
 }
 
 init();
