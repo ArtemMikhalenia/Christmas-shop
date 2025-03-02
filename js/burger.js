@@ -1,8 +1,6 @@
 const burgerButton = document.querySelector(".menu-burger");
 const headerList = document.querySelector(".header-list");
-// const headerContentLinks = headerContent.querySelectorAll('.navigation-link');
-// const menuLink = headerContent.querySelector('.menu-link');
-// const menuBtn = document.querySelector('.menu-btn');
+const headerContentLinks = headerList.querySelectorAll(".header-list-link");
 
 if (burgerButton) {
 	burgerButton.addEventListener("click", () => {
@@ -18,20 +16,9 @@ if (burgerButton) {
 			burgerButton.classList.remove("inactive");
 		}
 
-		// headerContentLinks.forEach((el) => {
-		// 	el.addEventListener("click", removeClasses);
-		// });
-
-		// if (menuLink) {
-		// 	menuLink.addEventListener("click", (event) => {
-		// 		event.preventDefault();
-		// 		const linkToMenuPage = menuBtn.getAttribute("href").slice(2);
-		// 		removeClasses();
-		// 		headerContent.addEventListener("transitionend", () => {
-		// 			window.location.href = linkToMenuPage;
-		// 		});
-		// 	});
-		// }
+		headerContentLinks.forEach((el) => {
+			el.addEventListener("click", removeClasses);
+		});
 	});
 }
 
@@ -42,7 +29,10 @@ window.addEventListener("resize", () => {
 });
 
 function removeClasses() {
-	burgerButton.classList.remove("active");
-	headerList.classList.remove("active");
-	document.body.classList.remove("lock");
+	if (burgerButton.classList.contains("active")) {
+		burgerButton.classList.add("inactive");
+		burgerButton.classList.remove("active");
+		headerList.classList.remove("active");
+		document.body.classList.remove("lock");
+	}
 }

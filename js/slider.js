@@ -9,8 +9,16 @@ const sliderBtnLeft = document.querySelector(".slider-left-btn");
 const sliderBtnRight = document.querySelector(".slider-right-btn");
 
 let counter = 0;
-const numberOfClicks = 4;
+let numberOfClicks;
 let width;
+
+function numberOfClicksFunction() {
+	if (document.documentElement.clientWidth < 768) {
+		return (numberOfClicks = 6);
+	} else {
+		return (numberOfClicks = 3);
+	}
+}
 
 function init() {
 	if (sliderWrapper) {
@@ -28,9 +36,16 @@ function init() {
 	}
 }
 
+numberOfClicksFunction();
 init();
 
-window.addEventListener("resize", init);
+window.addEventListener("resize", () => {
+	width = 0;
+	counter = 0;
+
+	numberOfClicksFunction();
+	init();
+});
 
 if (sliderBtnLeft) sliderBtnLeft.addEventListener("click", prevSlider);
 if (sliderBtnRight) sliderBtnRight.addEventListener("click", nextSlider);

@@ -127,6 +127,14 @@ body {
 				&.inactive {
 					pointer-events: none;
 				}
+
+				@media (max-width: 768px) {
+					font-size: 24px;
+					line-height: 152%;
+					letter-spacing: 0.16em;
+					text-align: left;
+					text-transform: uppercase;
+				}
 			}
 		}
 
