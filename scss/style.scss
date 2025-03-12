@@ -31,11 +31,6 @@ body {
 .main-container {
 	max-width: 1276px;
 	margin: 0 auto;
-	// padding: 0px 40px;
-
-	// @media (max-width: 600px) {
-	// 	padding: 0px 16px;
-	// }
 }
 
 .work-tag {
@@ -1183,6 +1178,46 @@ body {
 
 			@media (max-width: 650px) {
 				grid-template-columns: 1fr;
+			}
+		}
+	}
+}
+
+.top-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	width: 56px;
+	height: 56px;
+	bottom: 0;
+	right: 0;
+	margin: 0px 40px 40px 0px;
+
+	border: none;
+	box-shadow: inset 0 0 0 1px $primary;
+	border-radius: 50%;
+
+	background-color: $static-white;
+	color: $primary;
+
+	opacity: 0;
+	transform: scale(0);
+	transition: all 0.5s ease 0s;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		margin: 0px 15px 15px 0px;
+
+		&.visible {
+			transform: scale(1);
+			opacity: 1;
+
+			@media (hover: hover) {
+				&:hover {
+					transform: scale(1.05);
+				}
 			}
 		}
 	}

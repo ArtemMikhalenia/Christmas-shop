@@ -14,6 +14,21 @@ const bestCard = {
 	},
 };
 
+const giftsCard = {
+	render: (imageSrc, imageAlt, categoryTag, category, name) => {
+		return `
+    <div class="gifts-card">
+      <div class="gifts-card-image">
+        <img src=${imageSrc} alt=${imageAlt}>
+      </div>
+      <div class="gifts-card-text">
+        <h4 class="gifts-card-tag ${categoryTag}">${category}</h4>
+        <h3 class="gifts-card-name">${name}</h3>
+      </div>
+    </div>`;
+	},
+};
+
 const modal = {
 	render: (
 		background,
@@ -81,4 +96,4 @@ const modal = {
 	},
 };
 
-export { bestCard, modal };
+export { bestCard, giftsCard, modal };
