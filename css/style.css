@@ -979,4 +979,126 @@ body.lock {
   .top-btn.visible:hover {
     transform: scale(1.05);
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(24, 28, 41, 0.8);
+  z-index: 12;
+  opacity: 1;
+}
+.modal .modal-body {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(236, 243, 248);
+}
+.modal .modal-body .modal-image {
+  position: relative;
+  max-height: 230px;
+  overflow: hidden;
+}
+.modal .modal-body .modal-image img {
+  position: relative;
+  top: -35px;
+  max-width: 100%;
+  width: 100%;
+}
+.modal .modal-body .modal-image .close-btn {
+  position: absolute;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.modal .modal-body .modal-image .close-btn::before, .modal .modal-body .modal-image .close-btn::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  top: 47%;
+  left: 13%;
+  border-radius: 5px;
+  background-color: rgb(24, 28, 41);
+}
+.modal .modal-body .modal-image .close-btn::before {
+  transform: rotate(45deg);
+}
+.modal .modal-body .modal-image .close-btn::after {
+  transform: rotate(-45deg);
+}
+.modal .modal-body .modal-content {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.modal .modal-body .modal-content .gifts-card-tag {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.modal .modal-body .modal-content .gifts-card-name {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(24, 28, 41);
+}
+.modal .modal-body .modal-content .gifts-card-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.modal .modal-body .modal-content .gifts-card-superpowers-heading {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgb(24, 28, 41);
+}
+.modal .modal-body .modal-content .superpowers-content {
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal-body .modal-content .superpowers-content .superpower-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  gap: 12px;
+}
+.modal .modal-body .modal-content .superpowers-content .superpower-block .superpower-text {
+  flex: 1 1 auto;
+}
+.modal .modal-body .modal-content .superpowers-content .superpower-block .snowflakes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 11px;
 }/*# sourceMappingURL=style.css.map */
