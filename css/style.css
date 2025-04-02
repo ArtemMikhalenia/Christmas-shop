@@ -981,7 +981,11 @@ body.lock {
   }
 }
 
-.modal {
+.modal-block {
+  transition: all 0.5s ease 0s;
+  opacity: 0;
+}
+.modal-block .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -996,7 +1000,7 @@ body.lock {
   z-index: 12;
   opacity: 1;
 }
-.modal .modal-body {
+.modal-block .modal .modal-body {
   max-width: 400px;
   width: 100%;
   display: flex;
@@ -1004,18 +1008,18 @@ body.lock {
   border-radius: 20px;
   background-color: rgb(236, 243, 248);
 }
-.modal .modal-body .modal-image {
+.modal-block .modal .modal-body .modal-image {
   position: relative;
   max-height: 230px;
   overflow: hidden;
 }
-.modal .modal-body .modal-image img {
+.modal-block .modal .modal-body .modal-image img {
   position: relative;
   top: -35px;
   max-width: 100%;
   width: 100%;
 }
-.modal .modal-body .modal-image .close-btn {
+.modal-block .modal .modal-body .modal-image .close-btn {
   position: absolute;
   padding: 10px;
   width: 40px;
@@ -1024,9 +1028,10 @@ body.lock {
   right: 12px;
   border: none;
   background-color: transparent;
+  transition: all 0.5s ease 0s;
   cursor: pointer;
 }
-.modal .modal-body .modal-image .close-btn::before, .modal .modal-body .modal-image .close-btn::after {
+.modal-block .modal .modal-body .modal-image .close-btn::before, .modal-block .modal .modal-body .modal-image .close-btn::after {
   content: "";
   position: absolute;
   width: 30px;
@@ -1035,19 +1040,31 @@ body.lock {
   left: 13%;
   border-radius: 5px;
   background-color: rgb(24, 28, 41);
+  transition: all 0.5s ease 0s;
 }
-.modal .modal-body .modal-image .close-btn::before {
+.modal-block .modal .modal-body .modal-image .close-btn::before {
   transform: rotate(45deg);
 }
-.modal .modal-body .modal-image .close-btn::after {
+.modal-block .modal .modal-body .modal-image .close-btn::after {
   transform: rotate(-45deg);
 }
-.modal .modal-body .modal-content {
+@media (hover: hover) {
+  .modal-block .modal .modal-body .modal-image .close-btn:hover {
+    transform: scale(1.05);
+  }
+  .modal-block .modal .modal-body .modal-image .close-btn:hover::before {
+    transform: rotate(90deg);
+  }
+  .modal-block .modal .modal-body .modal-image .close-btn:hover::after {
+    transform: rotate(0deg);
+  }
+}
+.modal-block .modal .modal-body .modal-content {
   padding: 20px;
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
 }
-.modal .modal-body .modal-content .gifts-card-tag {
+.modal-block .modal .modal-body .modal-content .gifts-card-tag {
   margin-bottom: 8px;
   font-size: 12px;
   font-weight: 600;
@@ -1055,7 +1072,7 @@ body.lock {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-.modal .modal-body .modal-content .gifts-card-name {
+.modal-block .modal .modal-body .modal-content .gifts-card-name {
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -1064,7 +1081,7 @@ body.lock {
   text-transform: uppercase;
   color: rgb(24, 28, 41);
 }
-.modal .modal-body .modal-content .gifts-card-text {
+.modal-block .modal .modal-body .modal-content .gifts-card-text {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 400;
@@ -1072,7 +1089,7 @@ body.lock {
   letter-spacing: 0%;
   text-align: left;
 }
-.modal .modal-body .modal-content .gifts-card-superpowers-heading {
+.modal-block .modal .modal-body .modal-content .gifts-card-superpowers-heading {
   margin-bottom: 10px;
   font-size: 12px;
   font-weight: 600;
@@ -1082,23 +1099,31 @@ body.lock {
   text-transform: uppercase;
   color: rgb(24, 28, 41);
 }
-.modal .modal-body .modal-content .superpowers-content {
+.modal-block .modal .modal-body .modal-content .superpowers-content {
   display: flex;
   flex-direction: column;
 }
-.modal .modal-body .modal-content .superpowers-content .superpower-block {
+.modal-block .modal .modal-body .modal-content .superpowers-content .superpower-block {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 24px;
   gap: 12px;
 }
-.modal .modal-body .modal-content .superpowers-content .superpower-block .superpower-text {
+.modal-block .modal .modal-body .modal-content .superpowers-content .superpower-block .superpower-text {
   flex: 1 1 auto;
 }
-.modal .modal-body .modal-content .superpowers-content .superpower-block .snowflakes {
+.modal-block .modal .modal-body .modal-content .superpowers-content .superpower-block .snowflakes {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 11px;
+}
+@media (max-width: 500px) {
+  .modal-block .modal .modal-body {
+    max-width: 364px;
+  }
+}
+.modal-block.opened {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

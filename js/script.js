@@ -3,3 +3,4 @@ import "./burger.js";
 import "./best.js";
 import "./timer.js";
 import "./gifts.js";
+import "./wow.js";

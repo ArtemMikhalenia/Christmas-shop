@@ -1,15 +1,20 @@
-import { giftsCard, modal } from "./components.js";
+import {
+	giftsCard,
+	modal,
+	activeSnowflake,
+	inactiveSnowflake,
+} from "./components.js";
 import { fetchData } from "./database.js";
 import { categoryData } from "./data.js";
 
-let giftsDatabase;
+export let giftsDatabase;
 
 const link =
 	"https://raw.githubusercontent.com/ArtemMikhalenia/christmas-shop-database/refs/heads/main/gifts.json";
 const giftsContainer = document.querySelector(".gifts-cards");
 const tabsContainer = document.querySelector(".tabs-container");
 const tabs = document.querySelectorAll(".tab");
-const modalBlock = document.querySelector(".modal-block");
+export const modalBlock = document.querySelector(".modal-block");
 
 const tabCategoryMap = {
 	"tab-for-work": "For Work",
@@ -57,8 +62,11 @@ function renderCards(giftsData) {
 				(el) => gift.category === el.category
 			);
 
+			const giftId = gift.name.toLowerCase().replaceAll(" ", "-");
+
 			if (categoryInfo) {
 				giftsContainer.innerHTML += giftsCard.render(
+					giftId,
 					categoryInfo.imageSrc,
 					categoryInfo.imageAlt,
 					categoryInfo.categoryTag,
@@ -102,13 +110,59 @@ function scrollToTop() {
 	});
 }
 
-function openModal() {
+export function openModal() {
+	modalBlock && modalBlock.classList.add("opened");
 	let id = this.getAttribute("id");
-	let currentPrice = 0;
+	let databaseName = "";
+	const totalSnowflakes = 5;
+
 	for (let key in giftsDatabase) {
-		if (giftsDatabase[key].name === id) {
-			modalBlock.innerHTML = modal.render(giftsDatabase[key].background);
-			currentPrice = giftsDatabase[key].price;
+		databaseName = giftsDatabase[key].name.toLowerCase().replaceAll(" ", "-");
+
+		const categoryInfo = categoryData.find(
+			(el) => giftsDatabase[key].category === el.category
+		);
+
+		if (databaseName === id) {
+			const superpowerLive = giftsDatabase[key].superpowers.live[1];
+			const superpowerCreate = giftsDatabase[key].superpowers.create[1];
+			const superpowerLove = giftsDatabase[key].superpowers.love[1];
+			const superpowerDream = giftsDatabase[key].superpowers.dream[1];
+
+			modalBlock.innerHTML = modal.render(
+				categoryInfo.imageSrc,
+				categoryInfo.imageAlt,
+				categoryInfo.categoryTag,
+				giftsDatabase[key].category,
+				giftsDatabase[key].name,
+				giftsDatabase[key].description,
+				giftsDatabase[key].superpowers.live,
+				giftsDatabase[key].superpowers.create,
+				giftsDatabase[key].superpowers.love,
+				giftsDatabase[key].superpowers.dream
+			);
+
+			const superpowerLiveBlock = document.querySelector(".live-snowflakes");
+			const superpowerCreateBlock =
+				document.querySelector(".create-snowflakes");
+			const superpowerLoveBlock = document.querySelector(".love-snowflakes");
+			const superpowerDreamBlock = document.querySelector(".dream-snowflakes");
+
+			superpowerLiveBlock.innerHTML =
+				activeSnowflake.render().repeat(superpowerLive) +
+				inactiveSnowflake.render().repeat(totalSnowflakes - superpowerLive);
+
+			superpowerCreateBlock.innerHTML =
+				activeSnowflake.render().repeat(superpowerCreate) +
+				inactiveSnowflake.render().repeat(totalSnowflakes - superpowerCreate);
+
+			superpowerLoveBlock.innerHTML =
+				activeSnowflake.render().repeat(superpowerLove) +
+				inactiveSnowflake.render().repeat(totalSnowflakes - superpowerLove);
+
+			superpowerDreamBlock.innerHTML =
+				activeSnowflake.render().repeat(superpowerDream) +
+				inactiveSnowflake.render().repeat(totalSnowflakes - superpowerDream);
 		}
 	}
 
@@ -124,31 +178,10 @@ function openModal() {
 		}
 	});
 	document.body.classList.add("lock");
-
-	updatePrice(currentPrice);
-
-	document.querySelectorAll(".price-label").forEach((el) => {
-		el.addEventListener("click", (event) => {
-			let currentOption = document.querySelector(".selected");
-			if (!event.target.classList.contains("add")) {
-				if (!event.target) return;
-				if (event.target.classList.contains("selected")) return;
-
-				if (!event.target.classList.contains("selected")) {
-					event.target.classList.add("selected");
-					currentOption.classList.remove("selected");
-				}
-				updatePrice(currentPrice);
-			} else {
-				if (!event.target) return;
-				event.target.classList.toggle("selected");
-				updatePrice(currentPrice);
-			}
-		});
-	});
 }
 
 function closeModal() {
+	modalBlock && modalBlock.classList.remove("opened");
 	modalBlock.innerHTML = "";
 	document.body.classList.remove("lock");
 }

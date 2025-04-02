@@ -1,7 +1,7 @@
 const bestCard = {
-	render: (imageSrc, imageAlt, categoryTag, category, name) => {
+	render: (bestId, imageSrc, imageAlt, categoryTag, category, name) => {
 		return `
-        <div class="best-card">
+        <div class="best-card wow zoomIn" id="${bestId}">
           <div class="card-image">
             <img src=${imageSrc} alt=${imageAlt}>
           </div>
@@ -15,9 +15,9 @@ const bestCard = {
 };
 
 const giftsCard = {
-	render: (imageSrc, imageAlt, categoryTag, category, name) => {
+	render: (giftId, imageSrc, imageAlt, categoryTag, category, name) => {
 		return `
-    <div class="gifts-card">
+    <div class="gifts-card wow zoomIn" id="${giftId}">
       <div class="gifts-card-image">
         <img src=${imageSrc} alt=${imageAlt}>
       </div>
@@ -31,69 +31,68 @@ const giftsCard = {
 
 const modal = {
 	render: (
-		background,
-		title,
-		text,
-		sSize,
-		mSize,
-		lSize,
-		additiveOne,
-		additiveTwo,
-		additiveThree,
-		price,
-		sSizeValue,
-		mSizeValue,
-		lSizeValue,
-		additiveOnePrice,
-		additiveTwoPrice,
-		additiveThreePrice
+		imageSrc,
+		imageAlt,
+		categoryTag,
+		category,
+		name,
+		description,
+		liveNumber,
+		createNumber,
+		loveNumber,
+		dreamNumber
 	) => {
 		return `
      <div class="modal">
         <div class="modal-body">
-           <div class="modal-left">
-              <div class="item-background ${background}"></div>
-           </div>
-           <div class="modal-right">
-              <h3>${title}</h3>
-              <p>${text}</p>
-              <div class="size-block">
-                 <h4>Size</h4>
-                 <form class="size-buttons">
-                    <input type="radio" class="radio" name="size" id="small" checked>
-                    <label data-set="S" class="price-label selected" data-price="${sSizeValue}" for="small">${sSize}</label>
-                    <input type="radio" class="radio" name="size" id="medium">
-                    <label data-set="M" class="price-label" data-price="${mSizeValue}" for="medium">${mSize}</label>
-                    <input type="radio" class="radio" name="size" id="large">
-                    <label data-set="L" class="price-label" data-price="${lSizeValue}" for="large">${lSize}</label>
-                 </form>
+          <div class="modal-image">
+            <img src="${imageSrc}" alt="${imageAlt}">
+            <button class="close-btn"></button>
+          </div>
+          <div class="modal-content">
+            <h4 class="gifts-card-tag ${categoryTag}">${category}</h4>
+            <h3 class="gifts-card-name">${name}</h3>
+            <p class="gifts-card-text">${description}</p>
+            <h4 class="gifts-card-superpowers-heading">Adds superpowers to:</h4>
+            <div class="superpowers-content">
+              <div class="superpower-block live-superpower">
+                <div class="superpower-text">Live</div>
+                <div class="superpower-number">${liveNumber}</div>
+                <div class="snowflakes live-snowflakes"></div>
               </div>
-              <div class="additives-block">
-                 <h4>Additives</h4>
-                 <form class="additives-buttons">
-                    <input type="checkbox" class="checkbox" name="additives" id="first">
-                    <label data-set="1" for="first" data-price="${additiveOnePrice}" class="price-label add">${additiveOne}</label>
-                    <input type="checkbox" class="checkbox" name="additives" id="second">
-                    <label data-set="2" for="second" data-price="${additiveTwoPrice}" class="price-label add">${additiveTwo}</label>
-                    <input type="checkbox" class="checkbox" name="additives" id="third">
-                    <label data-set="3" for="third" data-price="${additiveThreePrice}" class="price-label add">${additiveThree}</label>
-                 </form>
+              <div class="superpower-block create-superpower">
+                <div class="superpower-text">Create</div>
+                <div class="superpower-number">${createNumber}</div>
+                <div class="snowflakes create-snowflakes"></div>
               </div>
-              <div class="price-block">
-                 Total:
-                 <span class="total-price">$${price}</span>
+              <div class="superpower-block love-superpower">
+                <div class="superpower-text">Love</div>
+                <div class="superpower-number">${loveNumber}</div>
+                <div class="snowflakes love-snowflakes"></div>
               </div>
-              <div class="alert-block">
-                 <img src="./images/menu-page/info-empty.svg" alt="info-empty">
-                 <p>The cost is not final. Download our mobile app to see the final price and place your order. Earn
-                    loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+              <div class="superpower-block dream-superpower">
+                <div class="superpower-text">Dream</div>
+                <div class="superpower-number">${dreamNumber}</div>
+                <div class="snowflakes dream-snowflakes"></div>
               </div>
-              <button class="close-btn">Close</button>
-           </div>
+            </div>
+          </div>
         </div>
-     </div>
+      </div>
      `;
 	},
 };
 
-export { bestCard, giftsCard, modal };
+const activeSnowflake = {
+	render: () => {
+		return `<img src="./images/icons/snowflake-active.svg" alt="snowflake-active">`;
+	},
+};
+
+const inactiveSnowflake = {
+	render: () => {
+		return `<img src="./images/icons/snowflake-inactive.svg" alt="snowflake-inactive">`;
+	},
+};
+
+export { bestCard, giftsCard, modal, activeSnowflake, inactiveSnowflake };
